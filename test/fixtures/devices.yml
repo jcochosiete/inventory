@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  serial: MyString
+  model: MyString
+  brand: MyString
+  processor: MyString
+  memory: 1
+  storage: 1.5
+  status: false
+  headquarter: one
+  colaborator: one
+
+two:
+  serial: MyString
+  model: MyString
+  brand: MyString
+  processor: MyString
+  memory: 1
+  storage: 1.5
+  status: false
+  headquarter: two
+  colaborator: two

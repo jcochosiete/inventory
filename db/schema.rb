@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_07_235731) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_08_224538) do
   create_table "colaborators", force: :cascade do |t|
     t.string "name", null: false
     t.string "lastname", null: false
@@ -21,6 +21,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_235731) do
     t.string "adress", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "devices", force: :cascade do |t|
+    t.string "serial"
+    t.string "model"
+    t.string "brand"
+    t.string "processor"
+    t.integer "memory"
+    t.float "storage"
+    t.boolean "status"
+    t.integer "headquarter_id", null: false
+    t.integer "colaborator_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["colaborator_id"], name: "index_devices_on_colaborator_id"
+    t.index ["headquarter_id"], name: "index_devices_on_headquarter_id"
   end
 
   create_table "headquarters", force: :cascade do |t|
@@ -51,6 +67,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_235731) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "devices", "colaborators"
+  add_foreign_key "devices", "headquarters"
   add_foreign_key "peripherals", "colaborators"
   add_foreign_key "peripherals", "headquarters"
   add_foreign_key "peripherals", "types"
