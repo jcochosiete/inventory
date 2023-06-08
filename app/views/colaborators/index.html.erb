@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Colaborators</h1>
+
+<div id="colaborators">
+  <% @colaborators.each do |colaborator| %>
+    <%= render colaborator %>
+    <p>
+      <%= link_to "Show this colaborator", colaborator %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New colaborator", new_colaborator_path %>

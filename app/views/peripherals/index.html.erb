@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Peripherals</h1>
+
+<div id="peripherals">
+  <% @peripherals.each do |peripheral| %>
+    <%= render peripheral %>
+    <p>
+      <%= link_to "Show this peripheral", peripheral %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New peripheral", new_peripheral_path %>

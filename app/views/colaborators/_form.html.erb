@@ -1,0 +1,53 @@
+<%= form_with(model: colaborator) do |form| %>
+  <% if colaborator.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(colaborator.errors.count, "error") %> prohibited this colaborator from being saved:</h2>
+
+      <ul>
+        <% colaborator.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :lastname, style: "display: block" %>
+    <%= form.text_field :lastname %>
+  </div>
+
+  <div>
+    <%= form.label :profile, style: "display: block" %>
+    <%= form.text_field :profile %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.select :status,["active","inactive"] %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.number_field :phone %>
+    
+  </div>
+
+  <div>
+    <%= form.label :adress, style: "display: block" %>
+    <%= form.text_field :adress %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -10,12 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_07_222624) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_07_235731) do
+  create_table "colaborators", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "lastname", null: false
+    t.string "profile"
+    t.boolean "status", null: false
+    t.string "email", null: false
+    t.integer "phone", null: false
+    t.string "adress", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "headquarters", force: :cascade do |t|
     t.string "name"
     t.string "adress"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "peripherals", force: :cascade do |t|
+    t.string "serial"
+    t.text "description"
+    t.string "brand"
+    t.string "model"
+    t.integer "type_id", null: false
+    t.integer "colaborator_id", null: false
+    t.integer "headquarter_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["colaborator_id"], name: "index_peripherals_on_colaborator_id"
+    t.index ["headquarter_id"], name: "index_peripherals_on_headquarter_id"
+    t.index ["type_id"], name: "index_peripherals_on_type_id"
   end
 
   create_table "types", force: :cascade do |t|
@@ -24,4 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_222624) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "peripherals", "colaborators"
+  add_foreign_key "peripherals", "headquarters"
+  add_foreign_key "peripherals", "types"
 end

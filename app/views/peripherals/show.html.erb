@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @peripheral %>
+
+<div>
+  <%= link_to "Edit this peripheral", edit_peripheral_path(@peripheral) %> |
+  <%= link_to "Back to peripherals", peripherals_path %>
+
+  <%= button_to "Destroy this peripheral", @peripheral, method: :delete %>
+</div>
