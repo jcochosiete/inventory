@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :histories
   resources :devices
   resources :peripherals
   resources :colaborators
