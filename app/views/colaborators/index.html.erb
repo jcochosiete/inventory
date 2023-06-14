@@ -3,12 +3,33 @@
 <h1>Colaborators</h1>
 
 <div id="colaborators">
-  <% @colaborators.each do |colaborator| %>
-    <%= render colaborator %>
-    <p>
-      <%= link_to "Show this colaborator", colaborator %>
-    </p>
-  <% end %>
+  <table class="table-auto">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Lastname</th>
+        <th>Profile</th>
+        <th>Status</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @colaborators.each do |colaborator| %>
+        <tr>
+          <td><%=colaborator.name %></td>
+          <td><%=colaborator.lastname %></td>
+          <td><%=colaborator.profile %></td>
+          <td><%=colaborator.status %></td>
+          <td><%=colaborator.email %></td>
+          <td><%=colaborator.phone %></td>
+          <td><%=colaborator.adress %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
 <%= link_to "New colaborator", new_colaborator_path %>
