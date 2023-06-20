@@ -65,6 +65,6 @@ class PeripheralsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def peripheral_params
-      params.require(:peripheral).permit(:serial, :description, :brand, :model, :type_id, :colaborator_id, :headquarter_id)
+      params.require(:peripheral).permit(:serial, :description, :brand, :model, :type_id, :status, :colaborator_id, :headquarter_id)
     end
 end
