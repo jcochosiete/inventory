@@ -1,4 +1,4 @@
-class DasboardController < ApplicationController
+class DashboardController < ApplicationController
   def index
     @devices = Device.all
     @peripherals = Peripheral.all
