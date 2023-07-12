@@ -1,0 +1,29 @@
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+<table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+  <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <tr>
+      <th scope="col" class="px-6 py-3">Modelo</th>
+      <th scope="col" class="px-6 py-3"># Serie</th>
+      <th scope="col" class="px-6 py-3">Brand</th>
+      <th scope="col" class="px-6 py-3">Specs</th>
+      <th scope="col" class="px-6 py-3">headquarter</th>
+      <th scope="col" class="px-6 py-3">Status</th>
+      <th scope="col" class="px-6 py-3">Assigned to</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% devices.each do |device|%>
+    <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+      <td class="px-6 py-4"><%= device.model%></td>
+      <td class="px-6 py-4"><%= device.serial%></td>
+      <td class="px-6 py-4"><%= device.brand%></td>
+      <td class="px-6 py-4"><%= "#{device.processor}" "#{device.memory}" "#{device.storage}" %></td>
+      <td class="px-6 py-4"><%= device.headquarter.adress%></td>
+      <td class="px-6 py-4"><%= pretty_status(device.status)%></td>
+      <td class="px-6 py-4"><%= "#{device.colaborator.name}" "#{device.colaborator.lastname}"%></td>
+    </tr>
+
+  <% end %>
+  </tbody>
+</table>
+</div>

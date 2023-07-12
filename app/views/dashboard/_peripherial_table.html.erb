@@ -1,0 +1,21 @@
+<div>
+<table >
+  <th>Modelo</th>
+  <th># Serie</th>
+  <th>Brand</th>
+  <th>Location</th>
+  <th>Status</th>
+  <th>Assigned to</th>
+  <% peripherals.each do |peripheral|%>
+    <tr>
+      <td><%= peripheral.model%></td>
+      <td><%= peripheral.serial%></td>
+      <td><%= peripheral.brand%></td>
+      <td><%= peripheral.headquarter.adress%></td>
+      <td><%= peripheral.status%></td>
+      <td><%= "#{peripheral.colaborator.name}" "#{peripheral.colaborator.lastname}"%></td>
+    </tr>
+
+  <% end %>
+</table>
+</div>
