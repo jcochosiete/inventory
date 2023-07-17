@@ -52,6 +52,10 @@
   </div>
 
   <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.select :status,["Aviable","Assigned"]  %>
+  </div>
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
