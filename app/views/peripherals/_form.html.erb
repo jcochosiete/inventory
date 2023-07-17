@@ -37,6 +37,11 @@
   </div>
 
   <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.select :status,["Aviable","Assigned"]  %>
+  </div>
+  
+  <div>
     <%= form.label :colaborator_id, style: "display: block" %>
     <%= form.select :colaborator_id, colaborators_options %>
   </div>

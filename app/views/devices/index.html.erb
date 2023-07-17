@@ -7,6 +7,7 @@
     <%= render device %>
     <p>
       <%= link_to "Show this device", device %>
+      <%= "#{device.colaborator.name} #{device.colaborator.lastname}"%>
     </p>
   <% end %>
 </div>

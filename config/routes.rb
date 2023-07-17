@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'dashboard#index'
+  resources :histories
   resources :devices
   resources :peripherals
   resources :colaborators
