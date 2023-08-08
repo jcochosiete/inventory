@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Device < ApplicationRecord
   validates :serial, presence: true
   validates :model, presence: true

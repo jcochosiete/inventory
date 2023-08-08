@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateColaborators < ActiveRecord::Migration[7.0]
   def change
     create_table :colaborators do |t|
@@ -5,7 +7,7 @@ class CreateColaborators < ActiveRecord::Migration[7.0]
       t.string :lastname, null: false
       t.string :profile
       t.boolean :status, null: false
-      t.string :email, null: false,uniqueness: true
+      t.string :email, null: false, uniqueness: true
       t.integer :phone, null: false, uniqueness: true
       t.string :adress, null: false
 

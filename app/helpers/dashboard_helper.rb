@@ -1,7 +1,9 @@
-module DashboardHelper
-    def pretty_status (status)
-        return "Assigned" if status 
+# frozen_string_literal: true
 
-        "Available"
-    end
+module DashboardHelper
+  def pretty_status(status)
+    return 'Assigned' if status
+
+    'Available'
+  end
 end
