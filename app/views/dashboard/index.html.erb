@@ -7,10 +7,11 @@
     </li>
 </ul>
 <div>
-    <%if @tab_param == DashboardController::DEVICES or @tab_param == nil%>
-        <%= render "relational_table", devices: @devices%>
-    <% else %>
-        <%= render "peripheral_table", peripherals: @peripherals%>
-    <%end%>
+    <%= tabs(@tools)%>
+    <%# <%if @tab_param == DashboardController::DEVICES || @tab_param == nil%>
+        <%# <%= render "relational_table", devices: @devices%> 
+    <%# <% else %> 
+        <%# <%= render "peripheral_table", peripherals: @peripherals%> 
+    <%# <%end%> 
 </div>
 
