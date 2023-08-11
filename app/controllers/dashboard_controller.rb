@@ -1,6 +1,19 @@
+# frozen_string_literal: true
+
 class DashboardController < ApplicationController
+  # constants
+  DEVICES = 'devices'
+  PERIPHERALS = 'peripherals'
+
   def index
-    @devices = Device.all
-    @peripherals = Peripheral.all
+    if (tab_param == DEVICES) || params[:tab].nil?
+      @tools = Device.all
+    else
+      @tools = Peripheral.all
+    end
+  end
+
+  def tab_param
+    @tab_param = params[:tab]
   end
 end
