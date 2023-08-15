@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'dashboard#index'
+  root 'landing#show'
+  #resource 'dashboard#show'
+  resources :landing, only: [:show]
+  resource :dashboard
   resources :histories
   resources :devices
   resources :peripherals
