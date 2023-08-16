@@ -1,18 +1,12 @@
 <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
-                <li class="mr-2">
-                    <%= link_to 'Devices', root_path(tab: DashboardController::DEVICES)%>
-                    
-                </li>
-                <li class="mr-2">
-                    <%= link_to 'Peripherals', root_path(tab: DashboardController::PERIPHERALS)%>
-                    
-                </li>
-            </ul>
+    <li class="mr-2">
+        <%= link_to 'Devices', root_path(tab: DashboardController::DEVICES)%>            
+    </li>
+    <li class="mr-2">
+        <%= link_to 'Peripherals', root_path(tab: DashboardController::PERIPHERALS)%>            
+    </li>
+</ul>
 <div>
-    <%if @tab_param == DashboardController::DEVICES or @tab_param == nil%>
-        <%= render "relational_table", devices: @devices%>
-    <% else %>
-        <%= render "peripheral_table", peripherals: @peripherals%>
-    <%end%>
+    <%= tabs(@tools)%>
 </div>
 
