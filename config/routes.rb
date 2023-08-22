@@ -2,8 +2,9 @@
 
 Rails.application.routes.draw do
   root 'landing#show'
+  devise_for :users
   resources :landing, only: [:show]
-  resource :dashboard
+  resources :dashboard
   resources :histories
   resources :devices
   resources :peripherals
