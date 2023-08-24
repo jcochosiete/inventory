@@ -9,7 +9,8 @@
                 <div class="flex items-center">
                     <%if user_signed_in?%>
                         <p class="mr-6 text-sm  text-gray-500 dark:text-white hover:underline"><%=current_user.name %></p>
-                        <a href="#" class="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Logout</a>
+                        <%= link_to 'Logout', destroy_user_session_path, class:"text-sm  text-blue-600 dark:text-blue-500 hover:underline"%>
+                        <%# <a href="#" class="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Logout</a> %>
                     <% else %>
                         <%= link_to 'Sing In',new_user_session_path, class:"text-sm  text-blue-600 dark:text-blue-500 hover:underline mr-4"%>
                         <a href="#" class="text-sm  text-blue-600 dark:text-blue-500 hover:underline">contact</a>

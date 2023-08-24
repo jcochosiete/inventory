@@ -9,9 +9,9 @@ module DashboardHelper
 
   def tabs(tools)
     if tools.instance_of? Device
-      render "relational_table", devices: @tools
+      render 'relational_table', devices: @tools
     else
-      render "peripheral_table", peripherals: @tools
+      render 'peripheral_table', peripherals: @tools
     end
   end
 end

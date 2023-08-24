@@ -6,11 +6,11 @@ class DashboardController < ApplicationController
   PERIPHERALS = 'peripherals'
 
   def show
-    if (tab_param == DEVICES) || params[:tab].nil?
-      @tools = Device.all
-    else
-      @tools = Peripheral.all
-    end
+    @tools = if (tab_param == DEVICES) || params[:tab].nil?
+               Device.all
+             else
+               Peripheral.all
+             end
   end
 
   def tab_param
